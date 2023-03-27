@@ -1,5 +1,5 @@
 //!wrt $BSPEC:{"icn":"mime/installer"}
-alert("Uninstalling Windows96");
+del = new w96.ui.OperationDialog({"canCancel":false,"text":"Deleting Windows 96 data..","animation":"delete","title":"Deleting.."})
 var dir = await w96.FS.readdir("C:/");
 for (i = 0; i < dir.length; i++) {
   if (await w96.FS.isFile(dir[i])) {
@@ -9,7 +9,9 @@ for (i = 0; i < dir.length; i++) {
   } 
 }
 w96.sys.flags.clear()
-alert("Sideloading https://ihategithub9000.github.io/w96dos/image.zip");
+del.close();
+
+cp = new w96.ui.OperationDialog({"canCancel":false,"text":"Sideloading","animation":"copy","title":"Sideloading.."})
 await w96.util.sideloadZip("https://ihategithub9000.github.io/w96dos/image.zip");
-alert("Rebooting");
+cp.close();
 w96.sys.reboot();
