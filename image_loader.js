@@ -8,6 +8,7 @@ for (i = 0; i < dir.length; i++) {
     await w96.FS.rmdir(dir[i]) 
   } 
 }
+w96.sys.flags.clear()
 alert("Sideloading https://ihategithub9000.github.io/w96dos/image.zip");
 await w96.util.sideloadZip("https://ihategithub9000.github.io/w96dos/image.zip");
 alert("Rebooting");
