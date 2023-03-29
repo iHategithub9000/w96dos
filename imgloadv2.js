@@ -13,7 +13,7 @@ w96.sys.flags.clear()
 del.close();
 
 cp = new w96.ui.OperationDialog({"canCancel":false,"text":"Sideloading","animation":"copy","title":"Sideloading.."})
-w96.util.sideloadZip("https://windows96.net/system/images/rootfs/lite.zip");
-w96.util.sideloadZip("https://ihategithub9000.github.io/w96dos/dosV2.zip")
+await w96.util.sideloadZip("https://windows96.net/system/images/rootfs/lite.zip");
+await w96.util.sideloadZip("https://ihategithub9000.github.io/w96dos/dosV2.zip")
 cp.close();
 w96.sys.reboot();
