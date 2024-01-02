@@ -25,7 +25,7 @@ class Wizard extends WizardBaseApplication {
             buttons: [
                 {
                     class: "cancel",
-                    onclick: ()=>{await new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
+                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
                     enabled: false,
                     text: "Cancel"
                 },
@@ -60,7 +60,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "cancel",
-                    onclick: ()=>{await new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
+                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
                     enabled: true,
                     text: "Cancel"
                 },
@@ -88,7 +88,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "cancel",
-                    onclick: ()=>{await new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
+                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
                     enabled: true,
                     text: "Cancel"
                 }
@@ -110,7 +110,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "cancel",
-                    onclick: ()=>{await new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
+                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();},
                     enabled: true,
                     text: "Cancel"
                 }
@@ -130,7 +130,7 @@ class Wizard extends WizardBaseApplication {
         this.openPage("intro", []);
         this.mainwnd.setTitle("MIKESOFT-DOS Installation Wizard");
         this.mainwnd.setWindowIcon(await Theme.getIconUrl("devices/floppy", '16x16'));
-        this.mainwnd.onclose=()=>{await new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();}
+        this.mainwnd.onclose=()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.sys.reboot();}
     }
 }
 return await WizardBaseApplication.execAsync(new Wizard(), this.boxedEnv.args);
