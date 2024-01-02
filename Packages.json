@@ -1,0 +1,19 @@
+[
+  {
+    "name": "dos",
+    "friendlyName": "Mikesoft Dos",
+    "description": "commandline operating system from mikesoft",
+    "author": "none",
+    "category": "other",
+    "version": 1.0,
+    "feature_requirements": [],
+    "min_os_version": 300000,
+    "max_os_version": 400000,
+    "depends": [],
+    "iconFiles": {
+      "32x32": "$REPO_PATH$/dos/32x32.png",
+      "16x16": "$REPO_PATH$/dos/16x16.png"
+    },
+    "packageRoot": "$REPO_PATH$/dos"
+  }
+]
