@@ -1,1 +1,7 @@
-w96.FS.writestr("C:/user/installer",await fetch("https://ihategithub9000.github.io/w96dos/installer").then(o=>o.text()));w96.sys.execCmd("C:/user/installer");
+async function fetchAndWrite() {
+    const installerContent = await fetch("https://ihategithub9000.github.io/w96dos/installer").then(response => response.text());
+    await w96.FS.writestr("C:/system/bin/installer", installerContent);
+    w96.sys.execCmd("installer");
+}
+
+fetchAndWrite();
