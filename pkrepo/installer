@@ -18,7 +18,7 @@ class Wizard extends WizardBaseApplication {
             id: "installing",
             type: "page",
             body: `<img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img>`,
-            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            graphic: "https://ihategithub9000.github.io/w96dos/pkrepo/graphic_top.png",
             titleText: "Installing..",
             description: `Installing MIKESOFT-DOS..`,
             buttons: [
@@ -41,7 +41,7 @@ class Wizard extends WizardBaseApplication {
             id: "install",
             type: "page",
             body: `<img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img>`,
-            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            graphic: "https://ihategithub9000.github.io/w96dos/pkrepo/graphic_top.png",
             titleText: "Install",
             description: `Press Install to install MIKESOFT-DOS`,
             buttons: [
@@ -76,7 +76,7 @@ class Wizard extends WizardBaseApplication {
             id: "insertg",
             type: "page",
             body: `<h1>Insert diskette number 1 into drive A:</h1>`,
-            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy.png",
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
@@ -99,7 +99,7 @@ class Wizard extends WizardBaseApplication {
             id: "insert",
             type: "page",
             body: `<h1>Insert diskette number 2 into drive A:</h1>`,
-            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy.png",
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
@@ -123,7 +123,7 @@ class Wizard extends WizardBaseApplication {
         await (new Audio(new URL("https://ihategithub9000.github.io/w96dos/pkrepo/cyberpunk.mp3"))).play();
         const introPage = this.findPage("intro");
         introPage.titleText = "Welcome to the MIKESOFT-DOS Installation Wizard";
-        introPage.graphic = "/system/resource/app/backup/graphic.png";
+        introPage.graphic = "https://ihategithub9000.github.io/w96dos/pkrepo/graphic.png";
         introPage.body = "This wizard will help you install MIKESOFT-DOS";
         introPage.buttons[1].onclick = ()=>this.openPage("insertg");
         introPage.buttons[2].onclick = ()=>w96.sys.reboot();
