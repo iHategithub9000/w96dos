@@ -18,7 +18,6 @@ class Wizard extends WizardBaseApplication {
             id: "installing",
             type: "page",
             body: `<img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img>`,
-            graphic: "https://ihategithub9000.github.io/w96dos/pkrepo/graphic_top.png",
             titleText: "Installing..",
             description: `Installing MIKESOFT-DOS..`,
             buttons: [
@@ -76,7 +75,6 @@ class Wizard extends WizardBaseApplication {
             id: "insertg",
             type: "page",
             body: `<h1>Insert diskette number 1 into drive A:</h1>`,
-            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy.png",
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
@@ -99,7 +97,6 @@ class Wizard extends WizardBaseApplication {
             id: "insert",
             type: "page",
             body: `<h1>Insert diskette number 2 into drive A:</h1>`,
-            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy.png",
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
