@@ -76,7 +76,7 @@ class Wizard extends WizardBaseApplication {
             id: "insertg",
             type: "page",
             body: `<h1>Insert diskette number 1 into drive A:</h1>`,
-            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy",
+            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy.png",
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
@@ -99,7 +99,7 @@ class Wizard extends WizardBaseApplication {
             id: "insert",
             type: "page",
             body: `<h1>Insert diskette number 2 into drive A:</h1>`,
-            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy",
+            graphic: "https://windows96.net/system/resource/icons/win96/32x32/devices/floppy.png",
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
