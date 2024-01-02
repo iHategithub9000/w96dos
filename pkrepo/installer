@@ -1,7 +1,7 @@
 //!wrt $BSPEC:{"icn":"devices/floppy"}
 
 function uninstall(){
-	new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})w96.FS.rm("C:/system/local/bin/installer");w96.FS.writestr("C:/system/boot/uninstallmesg.js","alert('It looks like you cancelled the DOS installation. To get back to the installer, go to the package manager and install Mikesoft Dos again.');w96.FS.rm('C:/system/boot/uninstallmesg.js');");w96.FS.reboot();
+	new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});w96.FS.rm("C:/system/local/bin/installer");w96.FS.writestr("C:/system/boot/uninstallmesg.js","alert('It looks like you cancelled the DOS installation. To get back to the installer, go to the package manager and install Mikesoft Dos again.');w96.FS.rm('C:/system/boot/uninstallmesg.js');");w96.FS.reboot();
 }
 
 
