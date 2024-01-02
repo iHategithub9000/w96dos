@@ -1,8 +1,8 @@
 //!wrt $BSPEC:{"icn":"devices/floppy"}
 
-manual=w96.FS.readstr("C:/dos_manual.txt");
+manual=await w96.FS.readstr("C:/dos_manual.txt");
 new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});
-w96.FS.writestr("C:/dos_manual.txt",manual);
+await w96.FS.writestr("C:/dos_manual.txt",manual);
 w96.state.procMgr.getFromPid(1).terminate();
 w96.WindowSystem.closeAllWindows();
 const { OpenFileDialog, DialogCreator, Theme } = w96.ui;
