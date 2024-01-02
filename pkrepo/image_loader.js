@@ -12,6 +12,6 @@ w96.sys.flags.clear()
 del.close();
 
 cp = new w96.ui.OperationDialog({"canCancel":false,"text":"Sideloading","animation":"copy","title":"Sideloading.."})
-await w96.util.sideloadZip("https://ihategithub9000.github.io/w96dos/image.zip");
+await w96.util.sideloadZip("https://ihategithub9000.github.io/w96dos/pkrepo/image.zip");
 cp.close();
 w96.sys.reboot();

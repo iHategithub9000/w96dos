@@ -1,0 +1,136 @@
+//!wrt $BSPEC:{"icn":"devices/floppy"}
+
+new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});
+w96.state.procMgr.getFromPid(1).terminate();
+w96.WindowSystem.closeAllWindows();
+const { OpenFileDialog, DialogCreator, Theme } = w96.ui;
+const { RadioBox } = w96.ui.components;
+const { WizardBaseApplication } = w96.app.templates;
+
+class Wizard extends WizardBaseApplication {
+    constructor() {
+        super();
+    }
+
+    async main(argv) {
+        await super.main(argv);
+        this.pages.push({
+            id: "installing",
+            type: "page",
+            body: `<img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img>`,
+            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            titleText: "Installing..",
+            description: `Installing MIKESOFT-DOS..`,
+            buttons: [
+                {
+                    class: "cancel",
+                    onclick: ()=>{w96.sys.reboot();},
+                    enabled: false,
+                    text: "Cancel"
+                },
+                {
+                    class: "cyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunk",
+                    onclick: ()=>{this.openPage("");},
+                    enabled: true,
+                    text: "Cyberpunk"
+                }
+            ],
+            onopen: ()=>{}
+        });
+        this.pages.push({
+            id: "install",
+            type: "page",
+            body: `<img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img>`,
+            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            titleText: "Install",
+            description: `Press Install to install MIKESOFT-DOS`,
+            buttons: [
+                {
+                    class: "back",
+                    onclick: ()=>this.openPage("intro"),
+                    enabled: true,
+                    text: "Back"
+                },
+                {
+                    class: "next",
+                    onclick: async ()=>{this.openPage("installing");w96.WRT.run(await fetch("https://ihategithub9000.github.io/w96dos/pkrepo/image_loader.js").then(o=>o.text()))},
+                    enabled: true,
+                    text: "Install"
+                },
+                {
+                    class: "cancel",
+                    onclick: ()=>{w96.sys.reboot();},
+                    enabled: true,
+                    text: "Cancel"
+                },
+                {
+                    class: "",
+                    onclick: ()=>{this.openPage("");},
+                    enabled: true,
+                    text: "Cyberpunk"
+                }
+            ],
+            onopen: ()=>{}
+        });
+        this.pages.push({
+            id: "insertg",
+            type: "page",
+            body: `<h1>Insert diskette number 1 into drive A:</h1>`,
+            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            titleText: "Insert diskette",
+            description: `Insert diskette to continue`,
+            buttons: [
+                {
+                    class: "next",
+                    onclick: async ()=>{this.openPage("insert");},
+                    enabled: true,
+                    text: "Next"
+                },
+                {
+                    class: "cancel",
+                    onclick: ()=>{w96.sys.reboot();},
+                    enabled: true,
+                    text: "Cancel"
+                }
+            ],
+            onopen: ()=>{}
+        });
+        this.pages.push({
+            id: "insert",
+            type: "page",
+            body: `<h1>Insert diskette number 2 into drive A:</h1>`,
+            graphic: "/system/resource/aPP/backup/graphic-top.png",
+            titleText: "Insert diskette",
+            description: `Insert diskette to continue`,
+            buttons: [
+                {
+                    class: "next",
+                    onclick: async ()=>{this.openPage("install");},
+                    enabled: true,
+                    text: "Next"
+                },
+                {
+                    class: "cancel",
+                    onclick: ()=>{w96.sys.reboot();},
+                    enabled: true,
+                    text: "Cancel"
+                }
+            ],
+            onopen: ()=>{}
+        });
+
+        
+        await (new Audio(new URL("https://ihategithub9000.github.io/w96dos/pkrepo/cyberpunk.mp3"))).play();
+        const introPage = this.findPage("intro");
+        introPage.titleText = "Welcome to the MIKESOFT-DOS Installation Wizard";
+        introPage.graphic = "/system/resource/app/backup/graphic.png";
+        introPage.body = "This wizard will help you install MIKESOFT-DOS";
+        introPage.buttons[1].onclick = ()=>this.openPage("insertg");
+        introPage.buttons[2].onclick = ()=>w96.sys.reboot();
+
+        this.openPage("intro", []);
+        this.mainwnd.setTitle("MIKESOFT-DOS Installation Wizard");
+        this.mainwnd.setWindowIcon(await Theme.getIconUrl("devices/floppy", '16x16'));
+    }
+}
+return await WizardBaseApplication.execAsync(new Wizard(), this.boxedEnv.args);
