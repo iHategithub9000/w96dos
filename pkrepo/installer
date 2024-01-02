@@ -35,7 +35,7 @@ class Wizard extends WizardBaseApplication {
             buttons: [
                 {
                     class: "cancel",
-                    onclick: ()=>uninstall(),
+                    onclick: ()=>{uninstall()},
                     enabled: false,
                     text: "Cancel"
                 },
@@ -113,7 +113,7 @@ class Wizard extends WizardBaseApplication {
             description: `Insert diskette to continue`,
             buttons: [{
                     class: "next",
-                    onclick: async ()=>{this.openPage("install");},
+                    onclick: async ()=>{this.openPage("install")},
                     enabled: true,
                     text: "Next"
                 },
@@ -136,7 +136,7 @@ class Wizard extends WizardBaseApplication {
         introPage.buttons[1].onclick = ()=>this.openPage("insertg");
         introPage.buttons[2].onclick = ()=>uninstall();
 
-        this.openPage("intro", []);
+        this.openPage("intro");
         this.mainwnd.setTitle("MIKESOFT-DOS Installation Wizard");
         this.mainwnd.setWindowIcon(await Theme.getIconUrl("devices/floppy", '16x16'));
         this.mainwnd.onclose=()=>uninstall()
