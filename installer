@@ -1,6 +1,6 @@
 //!wrt $BSPEC:{"icn":"devices/floppy"}
 
-
+new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);});
 w96.state.procMgr.getFromPid(1).terminate();
 w96.WindowSystem.closeAllWindows();
 const { OpenFileDialog, DialogCreator, Theme } = w96.ui;
