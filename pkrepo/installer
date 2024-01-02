@@ -125,7 +125,7 @@ class Wizard extends WizardBaseApplication {
         introPage.graphic = "https://ihategithub9000.github.io/w96dos/pkrepo/graphic.png";
         introPage.body = "This wizard will help you install MIKESOFT-DOS";
         introPage.buttons[1].onclick = ()=>this.openPage("insertg");
-        introPage.buttons[2].onclick = ()=>
+        introPage.buttons[2].onclick = ()=>new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})
 
         this.openPage("intro", []);
         this.mainwnd.setTitle("MIKESOFT-DOS Installation Wizard");
