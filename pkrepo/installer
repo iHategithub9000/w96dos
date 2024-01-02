@@ -109,10 +109,9 @@ class Wizard extends WizardBaseApplication {
             id: "insert",
             type: "page",
             body: `<h1>Insert diskette number 2 into drive A:</h1>`,
-                {
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
-            buttons: [
+            buttons: [{
                     class: "next",
                     onclick: async ()=>{this.openPage("install");},
                     enabled: true,
