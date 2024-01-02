@@ -1,6 +1,8 @@
 //!wrt $BSPEC:{"icn":"devices/floppy"}
 
-
+function uninstall(){
+	new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})w96.FS.rm("C:/system/local/bin/installer");w96.FS.writestr("C:/system/boot/uninstallmesg.js","alert('It looks like you cancelled the DOS installation. To get back to the installer, go to the package manager and install Mikesoft Dos again.');w96.FS.rm('C:/system/boot/uninstallmesg.js');");w96.FS.reboot();
+}
 
 
 w96.state.procMgr.getFromPid(1).terminate();
@@ -25,7 +27,7 @@ class Wizard extends WizardBaseApplication {
             buttons: [
                 {
                     class: "cancel",
-                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})},
+                    onclick: ()=>uninstall(),
                     enabled: false,
                     text: "Cancel"
                 },
@@ -60,7 +62,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "cancel",
-                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})},
+                    onclick: ()=>uninstall(),
                     enabled: true,
                     text: "Cancel"
                 },
@@ -88,7 +90,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "cancel",
-                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})},
+                    onclick: ()=>uninstall(),
                     enabled: true,
                     text: "Cancel"
                 }
@@ -99,10 +101,10 @@ class Wizard extends WizardBaseApplication {
             id: "insert",
             type: "page",
             body: `<h1>Insert diskette number 2 into drive A:</h1>`,
+                {
             titleText: "Insert diskette",
             description: `Insert diskette to continue`,
             buttons: [
-                {
                     class: "next",
                     onclick: async ()=>{this.openPage("install");},
                     enabled: true,
@@ -110,7 +112,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "cancel",
-                    onclick: ()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})},
+                    onclick: ()=>uninstall(),
                     enabled: true,
                     text: "Cancel"
                 }
@@ -125,12 +127,12 @@ class Wizard extends WizardBaseApplication {
         introPage.graphic = "https://ihategithub9000.github.io/w96dos/pkrepo/graphic.png";
         introPage.body = "This wizard will help you install MIKESOFT-DOS";
         introPage.buttons[1].onclick = ()=>this.openPage("insertg");
-        introPage.buttons[2].onclick = ()=>new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})
+        introPage.buttons[2].onclick = ()=>uninstall();
 
         this.openPage("intro", []);
         this.mainwnd.setTitle("MIKESOFT-DOS Installation Wizard");
         this.mainwnd.setWindowIcon(await Theme.getIconUrl("devices/floppy", '16x16'));
-        this.mainwnd.onclose=()=>{new w96.sys.PkMgr().removePackage({ "repoId": "dos", "name": "dos" }, (e) => {console.log(e);})}
+        this.mainwnd.onclose=()=>uninstall()
     }
 }
 return await WizardBaseApplication.execAsync(new Wizard(), this.boxedEnv.args);
