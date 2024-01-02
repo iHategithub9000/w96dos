@@ -8,4 +8,4 @@ setTimeout(async () => {
 
     await w96.FS.writestr("c:/system/packages/configs/sources.json", JSON.stringify(a));
     w96.sys.execCmd("pkmgr");
-}, 3000);
+}, 1000);
