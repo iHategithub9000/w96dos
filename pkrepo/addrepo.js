@@ -7,5 +7,7 @@ setTimeout(async () => {
     a.sources.push("https://ihategithub9000.github.io/w96dos/pkrepo");
 
     await w96.FS.writestr("c:/system/packages/configs/sources.json", JSON.stringify(a));
+    alert("Dos was added to package manager. Opening backupmgr and pkmgr")
     w96.sys.execCmd("pkmgr");
+    w96.sys.execCmd("backupwiz");
 }, 2000);
