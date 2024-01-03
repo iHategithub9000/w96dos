@@ -9,5 +9,5 @@ setTimeout(async () => {
     await w96.FS.writestr("c:/system/packages/configs/sources.json", JSON.stringify(a));
     alert("Dos was added to package manager. Opening backupmgr and pkmgr")
     w96.sys.execCmd("pkmgr");
-    w96.sys.execCmd("backupwiz");
+    w96.sys.execCmd("backupmgr");
 }, 2000);
