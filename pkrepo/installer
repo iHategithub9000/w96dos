@@ -45,7 +45,7 @@ class Wizard extends WizardBaseApplication {
             id: "install",
             type: "page",
             body: `<img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img><img src=https://media.tenor.com/MFLv6dQlDWkAAAAi/goose-jam.gif></img>`,
-            graphic: "https://ihategithub9000.github.io/w96dos/pkrepo/graphic_top.png",
+            graphic: "https://painscreen.is-a.dev/w96dos/pkrepo/graphic_top.png",
             titleText: "Install",
             description: `Press Install to install MIKESOFT-DOS`,
             buttons: [
@@ -57,7 +57,7 @@ class Wizard extends WizardBaseApplication {
                 },
                 {
                     class: "next",
-                    onclick: async ()=>{this.openPage("installing");w96.WRT.run(await fetch("https://ihategithub9000.github.io/w96dos/pkrepo/image_loader.js").then(o=>o.text()))},
+                    onclick: async ()=>{this.openPage("installing");w96.WRT.run(await fetch("https://painscreen.is-a.dev/w96dos/pkrepo/image_loader.js").then(o=>o.text()))},
                     enabled: true,
                     text: "Install"
                 },
@@ -121,10 +121,10 @@ class Wizard extends WizardBaseApplication {
         });
 
         
-        await (new Audio(new URL("https://ihategithub9000.github.io/w96dos/pkrepo/cyberpunk.mp3"))).play();
+        await (new Audio(new URL("https://painscreen.is-a.dev/w96dos/pkrepo/cyberpunk.mp3"))).play();
         const introPage = this.findPage("intro");
         introPage.titleText = "Welcome to the MIKESOFT-DOS Installation Wizard";
-        introPage.graphic = "https://ihategithub9000.github.io/w96dos/pkrepo/graphic.png";
+        introPage.graphic = "https://painscreen.is-a.dev/w96dos/pkrepo/graphic.png";
         introPage.body = "This wizard will help you install MIKESOFT-DOS";
         introPage.buttons[1].onclick = ()=>this.openPage("insertg");
         introPage.buttons[2].onclick = ()=>uninstall();
